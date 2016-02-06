@@ -1,0 +1,9 @@
+apply plugin: 'java'
+
+// Added as I have Java 1.8 on my work PC (force compilation to Java 1.7)
+sourceCompatibility = 1.7
+
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+}

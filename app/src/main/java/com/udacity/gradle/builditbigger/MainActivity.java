@@ -7,6 +7,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
+import com.udacity.gradle.jokes.Joker;
+
 
 public class MainActivity extends ActionBarActivity {
 
@@ -40,7 +42,19 @@ public class MainActivity extends ActionBarActivity {
     }
 
     public void tellJoke(View view){
-        Toast.makeText(this, "Three guys, stranded on a desert island, find a magic lantern containing a genie, who grants them each one wish. The first guy wishes he was off the island and back home. The second guy wishes the same. The third guy says \"I’m lonely. I wish my friends were back here.\"", Toast.LENGTH_LONG).show();
+
+/*
+        // Local version
+        String localJoke = "Three guys, stranded on a desert island, find a magic lantern containing a genie, who grants them each one wish. " +
+                "The first guy wishes he was off the island and back home. The second guy wishes the same. " +
+                "The third guy says 'I’m lonely. I wish my friends were back here.'";
+        Toast.makeText(this, localJoke, Toast.LENGTH_LONG).show();
+*/
+
+        // External version
+        Joker myJoker = new Joker();
+        String externalJoke = myJoker.getJoke();
+        Toast.makeText(this, externalJoke, Toast.LENGTH_LONG).show();
     }
 
 
