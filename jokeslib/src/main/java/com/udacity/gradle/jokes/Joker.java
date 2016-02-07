@@ -1,8 +1,8 @@
 package com.udacity.gradle.jokes;
 
-// A basic Joke provided as introduced in ud867 / Lesson 4 / Creating a Java Library
-// https://www.udacity.com/course/viewer#!/c-ud867-nd/l-3983839023/m-4326000125
-// https://github.com/udacity/ud867/tree/master/4.01-Demo-CreatingAJavaLibrary
+// A basic Joke provider class as introduced in ud867 / Lesson 4 / Creating a Java Library:
+//      Video: https://www.udacity.com/course/viewer#!/c-ud867-nd/l-3983839023/m-4326000125
+//      Code:  https://github.com/udacity/ud867/tree/master/4.01-Demo-CreatingAJavaLibrary
 
 public class Joker {
     public String getJoke() {
