@@ -8,6 +8,6 @@ public class Joker {
     public String getJoke() {
         return "#1. Three guys, stranded on a desert island, find a magic lantern containing a genie, who grants them each one wish. " +
                 "The first guy wishes he was off the island and back home. The second guy wishes the same. " +
-                "The third guy says \"I’m lonely. I wish my friends were back here.\"";
+                "The third guy says \"I\u2019m lonely. I wish my friends were back here.\"";
     }
 }
