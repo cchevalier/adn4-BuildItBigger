@@ -14,6 +14,8 @@ import com.udacity.gradle.jokes.Joker;
 
 public class MainActivity extends ActionBarActivity {
 
+    public final static String EXTRA_JOKE = "com.udacity.gradle.builditbigger.JOKE";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +62,7 @@ public class MainActivity extends ActionBarActivity {
 
         // Launch Joke Display Activity
         Intent intent = new Intent(this, JokeDisplayActivity.class);
+        intent.putExtra(EXTRA_JOKE, externalJoke);
         startActivity(intent);
 
     }
