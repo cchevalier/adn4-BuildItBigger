@@ -32,20 +32,18 @@ public class MyEndpoint {
     public MyBean sayHi(@Named("name") String name) {
         MyBean response = new MyBean();
         response.setData("Hi, " + name);
-
         return response;
     }
 
-    /** A simple endpoint method that takes a name and says Hi back */
+    /** A simple endpoint method that return a joke */
     @ApiMethod(name = "getJoke")
     public MyBean getJoke() {
-        MyBean response = new MyBean();
 
         Joker myJoker = new Joker();
         String externalJoke = myJoker.getJoke();
 
-        response.setData(externalJoke + " [via GCE]");
-
+        MyBean response = new MyBean();
+        response.setData(externalJoke + "\n[via GCE]");
         return response;
     }
 
