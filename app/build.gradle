@@ -33,11 +33,12 @@ dependencies {
     compile 'com.google.android.gms:play-services-ads:8.4.0'
 
     // Add dependency jokesLib
-    compile project(':jokeslib')
+    // compile project(':jokeslib')
 
     // Add dependency jokeDisplayLib
     compile project(':jokeDisplayLib')
 
+    // Add dependency backend
     compile project(path: ':backend', configuration: 'android-endpoints')
 
 }

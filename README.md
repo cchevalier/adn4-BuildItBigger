@@ -3,6 +3,7 @@ adn4-BuildItBigger
 
 by CChevalier, Feb. 2016
 
+## Requirements 
 
 ### Step 1: Create a Java Library  
     Your first task is to create a Java library that provides jokes. Create a new Gradle Java 
@@ -32,18 +33,57 @@ solution was to [force compilation of the java library to 1.7](https://discussio
 #### Google Cloud Endpoints  
 - [https://cloud.google.com/endpoints/](https://cloud.google.com/endpoints/)
 
-#### Other Courses
-- [Developing Scalable Apps in Python with Google App Engine](https://www.udacity.com/courses/ud858)
+#### Callback Interface (Useful for testing purpose, see next task)
+- [android asynctask sending callbacks to ui](http://stackoverflow.com/questions/9963691/android-asynctask-sending-callbacks-to-ui)  
+- [AsyncTask Implementation using callback interface](https://xelsoft.wordpress.com/2014/11/28/asynctask-implementation-using-callback-interface/)
+
+
+#### Other Course on Google Cloud infrastructure
 - [Developing Scalable Apps in Java with Google App Engine](https://www.udacity.com/courses/ud859) [[Code repo on GitHub](https://github.com/udacity/ud859)]
+- [Developing Scalable Apps in Python with Google App Engine](https://www.udacity.com/courses/ud858)
 
 
 ### Step 4: Add Functional Tests
 
     Add code to test that your Async task successfully retrieves a non-empty string. For a refresher 
     on setting up Android tests, check out demo 4.09.
+    
+#### References:
+From this [discussion](https://discussions.udacity.com/t/writing-tests-for-async-task/25482):
+- [Testable Android AsyncTask](http://www.making-software.com/2012/10/31/testable-android-asynctask/)  
+- [How to test AsyncTask in Android](http://marksunghunpark.blogspot.dk/2015/05/how-to-test-asynctask-in-android.html)  
+
 
 ### Step 5: Add a Paid Flavor
 
     Add free and paid product flavors to your app. Remove the ad (and any dependencies you can) from 
     the paid flavor.
+  
+  
+  
+## Optional Tasks
+
+
+### Add Interstitial Ad
+
+    Follow these instructions to add an interstitial ad to the free version. Display the add after 
+    the user hits the button, but before the joke is shown.
+
+https://developers.google.com/mobile-ads-sdk/docs/admob/android/interstitial
+
+### Add Loading Indicator
+
+    Add a loading indicator (progress bar) that is shown while the joke is being retrieved and 
+    disappears when the joke is ready. 
+    
+- [Suggested tutorial](http://www.tutorialspoint.com/android/android_loading_spinner.htm)
+
+### Configure Test Task
+
+    To tie it all together, create a Gradle task that:
+    
+    1. Launches the GCE local development server
+    2. Runs all tests
+    3. Shuts the server down again
+
 
