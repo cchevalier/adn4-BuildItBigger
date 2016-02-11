@@ -18,7 +18,7 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
-    productFlavors{
+    productFlavors {
         free {
             applicationId "com.udacity.gradle.builditbigger.free"
         }
@@ -27,13 +27,11 @@ android {
         }
     }
 
-/*
     // Added as I have Java 1.8 on my work PC
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_7
         targetCompatibility JavaVersion.VERSION_1_7
     }
-*/
 }
 
 dependencies {
@@ -41,12 +39,8 @@ dependencies {
 
     compile 'com.android.support:appcompat-v7:23.1.1'
 
-    // Added for AdMob
+    // Added for AdMob (free version only)
     freeCompile 'com.google.android.gms:play-services-ads:8.4.0'
-
-
-    // Add dependency jokesLib
-    // compile project(':jokeslib')
 
     // Add dependency jokeDisplayLib
     compile project(':jokeDisplayLib')
