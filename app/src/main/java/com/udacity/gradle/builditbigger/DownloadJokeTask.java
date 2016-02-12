@@ -11,13 +11,11 @@ import com.udacity.gradle.builditbigger.backend.myApi.MyApi;
 import java.io.IOException;
 
 /**
- * Created by cch on 10/02/2016.
+ * Created by cch on 10/02/2016
  *
- */
-
- /*      GC Endpoints handling using AsyncTask
- *
+ *      based on GC Endpoints handling using AsyncTask
  *      See: https://github.com/GoogleCloudPlatform/gradle-appengine-templates/tree/master/HelloEndpoints
+ *
  */
 public class DownloadJokeTask extends AsyncTask<Void, Void, String> {
 
@@ -45,15 +43,10 @@ public class DownloadJokeTask extends AsyncTask<Void, Void, String> {
             e.printStackTrace();
         }
 
-        if(myApiService == null) {  // Only do this once
+        if (myApiService == null) {
             MyApi.Builder builder = new MyApi.Builder(AndroidHttp.newCompatibleTransport(),
                     new AndroidJsonFactory(), null)
-                    // options for running against local devappserver
-                    // - 10.0.2.2 is localhost's IP address in Android emulator
-                    // - turn off compression when running against local devappserver
-                    //
-                    // Running AVD vs Genymotion
-                    //  see https://discussions.udacity.com/t/genymotion-emulator-root-url/27295
+                    // Running on AVD vs Genymotion, see https://discussions.udacity.com/t/genymotion-emulator-root-url/27295
                     // .setRootUrl("http://10.0.2.2:8080/_ah/api/")     // AVD
                     .setRootUrl("http://10.0.3.2:8080/_ah/api/")      // Genymotion
                     .setGoogleClientRequestInitializer(new GoogleClientRequestInitializer() {
@@ -62,8 +55,6 @@ public class DownloadJokeTask extends AsyncTask<Void, Void, String> {
                             abstractGoogleClientRequest.setDisableGZipContent(true);
                         }
                     });
-            // end options for devappserver
-
             myApiService = builder.build();
         }
 
