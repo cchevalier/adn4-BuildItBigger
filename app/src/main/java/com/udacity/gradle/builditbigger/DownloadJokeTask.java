@@ -38,9 +38,9 @@ public class DownloadJokeTask extends AsyncTask<Void, Void, String> {
     @Override
     protected String doInBackground(Void... params) {
 
-        // Slow down in order to see the progress bar...
+        // Slow down a bit in order to see the progress bar...
         try {
-            Thread.sleep(2000L);
+            Thread.sleep(1000L);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

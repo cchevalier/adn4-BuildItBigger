@@ -69,7 +69,7 @@ From this [discussion](https://discussions.udacity.com/t/writing-tests-for-async
     Follow these instructions to add an interstitial ad to the free version. Display the add after 
     the user hits the button, but before the joke is shown.
 
-https://developers.google.com/mobile-ads-sdk/docs/admob/android/interstitial
+https://developers.google.com/admob/android/interstitial
 
 ### Add Loading Indicator
 

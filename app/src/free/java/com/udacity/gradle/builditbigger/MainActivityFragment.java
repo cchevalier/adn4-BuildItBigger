@@ -9,9 +9,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ProgressBar;
 
+import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
+import com.google.android.gms.ads.InterstitialAd;
 import com.udacity.gradle.jokedisplay.JokeDisplayActivity;
 
 
@@ -21,6 +23,8 @@ import com.udacity.gradle.jokedisplay.JokeDisplayActivity;
 public class MainActivityFragment extends Fragment implements DownloadJokeTask.OnTaskCompleted {
 
     public final static String EXTRA_JOKE = "com.udacity.gradle.builditbigger.JOKE";
+
+    InterstitialAd mInterstitialAd;
 
     Button mTellJokeButton;
     ProgressBar mProgressBar;
@@ -33,11 +37,26 @@ public class MainActivityFragment extends Fragment implements DownloadJokeTask.O
                              Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_main, container, false);
 
+        mInterstitialAd = new InterstitialAd(getContext());
+        mInterstitialAd.setAdUnitId("ca-app-pub-3940256099942544/1033173712");
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdClosed() {
+                requestNewInterstitial();
+                tellJoke();
+            }
+        });
+        requestNewInterstitial();
+
         mTellJokeButton = (Button) root.findViewById(R.id.tellJokeButton);
         mTellJokeButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                tellJoke();
+                if (mInterstitialAd.isLoaded()) {
+                    mInterstitialAd.show();
+                } else {
+                    tellJoke();
+                }
             }
         });
 
@@ -52,7 +71,15 @@ public class MainActivityFragment extends Fragment implements DownloadJokeTask.O
                 .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
                 .build();
         mAdView.loadAd(adRequest);
+
         return root;
+    }
+
+    private void requestNewInterstitial(){
+        AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                .build();
+        mInterstitialAd.loadAd(adRequest);
     }
 
     public void tellJoke(){
