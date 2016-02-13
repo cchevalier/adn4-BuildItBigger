@@ -2,7 +2,10 @@
 adn4-BuildItBigger
 
 by CChevalier, Feb. 2016
+  
+This README file presents the references I used to complete each requirement and optional task of the Android Developer Nanodegree - Project 4: Build It Bigger  
 
+  
 ## Requirements 
 
 ### Step 1: Create a Java Library  
@@ -12,8 +15,8 @@ by CChevalier, Feb. 2016
     retrieved from your Java joke telling library.
 
 - Implementation identical to [ud867 /demo 4.01](https://www.udacity.com/course/viewer#!/c-ud867-nd/l-3983839023/m-4326000125)  
-- I had a task failed :app:preDexDebug due to Java 1.8 installed on my working dev computer, 
-solution was to [force compilation of the java library to 1.7](https://discussions.udacity.com/t/execution-failed-for-task-app-predexdebug-in-step-1/24243/5)
+- I had a task failed :app:preDexDebug due to Java 1.8 installed on my working dev computer,  
+  solution was to [force compilation of the java library to 1.7](https://discussions.udacity.com/t/execution-failed-for-task-app-predexdebug-in-step-1/24243/5)
 
 
 ### Step 2: Create an Android Library
@@ -21,6 +24,9 @@ solution was to [force compilation of the java library to 1.7](https://discussio
     Create an Android Library containing an Activity that will display a joke passed to it as an 
     intent extra. Wire up project dependencies so that the button can now pass the joke from the 
     Java Library to the Android Library.
+  
+- Implementation based on [ud867 /demo 4.03](https://www.udacity.com/course/viewer#!/c-ud867-nd/l-3983839023/m-4326000126)
+
             
 ### Step 3: Create GCE Module
 
@@ -45,8 +51,7 @@ solution was to [force compilation of the java library to 1.7](https://discussio
 
 ### Step 4: Add Functional Tests
 
-    Add code to test that your Async task successfully retrieves a non-empty string. For a refresher 
-    on setting up Android tests, check out demo 4.09.
+    Add code to test that your Async task successfully retrieves a non-empty string. 
     
 #### References:
 From this [discussion](https://discussions.udacity.com/t/writing-tests-for-async-task/25482):
@@ -59,32 +64,34 @@ From this [discussion](https://discussions.udacity.com/t/writing-tests-for-async
     Add free and paid product flavors to your app. Remove the ad (and any dependencies you can) from 
     the paid flavor.
   
+- Implementation similar to [exercise 3.08](https://www.udacity.com/course/viewer#!/c-ud867-nd/l-4020658782/e-4330660052/m-4330491250)  
+  
   
   
 ## Optional Tasks
 
 
-### Add Interstitial Ad
+### OT1: Add Interstitial Ad
 
     Follow these instructions to add an interstitial ad to the free version. Display the add after 
     the user hits the button, but before the joke is shown.
 
 - [Official Interstitial Ad Tutorial](https://developers.google.com/admob/android/interstitial)
 
-### Add Loading Indicator
+### OT2: Add Loading Indicator
 
     Add a loading indicator (progress bar) that is shown while the joke is being retrieved and 
     disappears when the joke is ready. 
     
 - [Suggested tutorial](http://www.tutorialspoint.com/android/android_loading_spinner.htm)
 
-### Configure Test Task
+### OT3: Configure Test Task
 
     To tie it all together, create a Gradle task that:
-    
-    1. Launches the GCE local development server
-    2. Runs all tests
-    3. Shuts the server down again
+        1. Launches the GCE local development server
+        2. Runs all tests
+        3. Shuts the server down again
 
+- Requires both appengine and gradle to run as a daemon (see this [discussion](https://discussions.udacity.com/t/appengine-daemon-dilemma-while-running-app-and-testing/42296))  
 - [Stackoverflow: Android gradle task Google Appengine](http://stackoverflow.com/questions/31434928/android-gradle-task-google-appengine)  
-- 
+
