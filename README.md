@@ -69,7 +69,7 @@ From this [discussion](https://discussions.udacity.com/t/writing-tests-for-async
     Follow these instructions to add an interstitial ad to the free version. Display the add after 
     the user hits the button, but before the joke is shown.
 
-https://developers.google.com/admob/android/interstitial
+- [Official Interstitial Ad Tutorial](https://developers.google.com/admob/android/interstitial)
 
 ### Add Loading Indicator
 
@@ -86,4 +86,5 @@ https://developers.google.com/admob/android/interstitial
     2. Runs all tests
     3. Shuts the server down again
 
-
+- [Stackoverflow: Android gradle task Google Appengine](http://stackoverflow.com/questions/31434928/android-gradle-task-google-appengine)  
+- 

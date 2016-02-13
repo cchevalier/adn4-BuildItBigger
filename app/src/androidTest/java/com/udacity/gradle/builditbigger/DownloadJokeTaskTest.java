@@ -24,6 +24,7 @@ public class DownloadJokeTaskTest extends AndroidTestCase implements DownloadJok
 
     @Override
     public void onDownloadJokeTaskCompleted(String joke) {
+//        assertTrue(joke.startsWith("(POKE#"));    // uncomment to get a failed test
         assertTrue(joke.startsWith("(JOKE#"));
         signal.countDown();
     }
